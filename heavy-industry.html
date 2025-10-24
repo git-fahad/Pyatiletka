@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Pyatiletka - Heavy Industry Sector</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700;900&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet"/>
+    <style>
+        :root {
+            --soviet-red: #C41E3A;
+            --soviet-beige: #F5F5DC;
+            --soviet-black: #000000;
+        }
+        body {
+            background-color: var(--soviet-beige);
+            color: var(--soviet-black);
+            font-family: 'Roboto', sans-serif;
+        }
+        .font-display {
+            font-family: 'Roboto Slab', serif;
+        }
+        .text-soviet-red { color: var(--soviet-red); }
+        .bg-soviet-red { background-color: var(--soviet-red); }
+        .border-soviet-red { border-color: var(--soviet-red); }
+        .hover\:text-soviet-red:hover { color: var(--soviet-red); }
+    </style>
+</head>
+<body>
+    <div class="min-h-screen flex flex-col">
+        <!-- Header with Navigation -->
+        <header class="bg-soviet-beige border-b-2 border-soviet-red sticky top-0 z-50">
+            <div class="container mx-auto px-4 md:px-10 py-4">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-4">
+                        <svg class="w-12 h-12 text-soviet-red" fill="currentColor" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M24.7,35.75,17.2,28.25,15.75,29.7l5.1,5.1q-2.2,2.8-5.3,4.225T8.7,40.45q-3.35,0-5.7-2.35T.65,32.4q0-3.3,2.325-5.65T8.5,24.4l-2.4-2.4q-.55-.55-.55-1.325,0-.775.55-1.325l2.8-2.8q.55-.55,1.325-.55t1.325.55L13.5,18.8,11.2,16.5q-1.25-1.25-.35-2.825t2.7-.925l2.25,2.25,4.3-4.3-2.25-2.25q.65-1.8,2.225-2.7t2.825.35l2.3,2.3,2.25-2.25L32.3,8.7l-2.25,2.25,2.3,2.3q1.25,1.25.35,2.825t-2.7.925L28,14.8l-4.3,4.3,2.25,2.25q-.65,1.8-2.225,2.7T21.2,23.7l-2.3-2.3-2.25,2.25L14.4,25.9l2.25,2.25,1.45-1.45,7.5,7.5Z"/>
+                        </svg>
+                        <h1 class="text-2xl md:text-3xl font-bold font-display text-soviet-red">GOSPLAN</h1>
+                    </div>
+                    <nav class="hidden md:flex items-center gap-8">
+                        <a href="index.html" class="text-lg font-medium font-display text-soviet-black hover:text-soviet-red transition-colors">Home</a>
+                        <a href="heavy-industry.html" class="text-lg font-bold font-display text-soviet-red">Heavy Industry</a>
+                        <a href="agriculture.html" class="text-lg font-medium font-display text-soviet-black hover:text-soviet-red transition-colors">Agriculture</a>
+                        <a href="consumer-goods.html" class="text-lg font-medium font-display text-soviet-black hover:text-soviet-red transition-colors">Consumer Goods</a>
+                    </nav>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="flex-1">
+            <!-- Hero Section -->
+            <div class="relative bg-cover bg-center min-h-[400px] flex items-center justify-center" style='background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7)), url("https://lh3.googleusercontent.com/aida-public/AB6AXuDUw1dVDLsmGxkAgJuB1xeTWmU6NLn0HUdmdsPXqLCmldO57yCmbEFdT6j7fQsohICqfRSx-83qWN1hnWpfIdFbycn83m4nATThf5GczH9EV_RE3ywcX7N--uIusaux5zC15iDJxT5PMWH694A3a0YPZForYwnyUctVoKCY9bRA9MjDDt27m2syIKIMfOTBOBqAJhSx5vR9b3Rchx15F15yezYdicAcUvBugPB0pgqM9cpvYewYAGzSArvmD8GNvdccCdNmYU2zBQw");'>
+                <div class="text-center px-4">
+                    <h2 class="text-5xl md:text-6xl font-black font-display text-soviet-red mb-4 uppercase">Heavy Industry</h2>
+                    <p class="text-xl md:text-2xl text-white font-display">Building the Foundation of the Union's Might</p>
+                </div>
+            </div>
+
+            <div class="container mx-auto px-4 md:px-10 py-12">
+                <!-- Overall Progress -->
+                <div class="mb-12">
+                    <div class="flex justify-between items-center mb-2">
+                        <h3 class="text-2xl font-bold font-display text-soviet-black">Overall Sector Completion: 1986-1990</h3>
+                        <span class="text-2xl font-bold text-soviet-black">75%</span>
+                    </div>
+                    <div class="bg-gray-300 h-6 rounded-full">
+                        <div class="bg-soviet-red h-6 rounded-full" style="width: 75%"></div>
+                    </div>
+                </div>
+
+                <!-- Key Metrics -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+                    <div class="bg-white border-t-4 border-soviet-red p-6 shadow-lg rounded">
+                        <h4 class="text-soviet-red text-xl font-bold mb-2 font-display">STEEL PRODUCTION</h4>
+                        <p class="text-5xl font-bold text-soviet-black mb-2">90M Tons</p>
+                        <p class="text-gray-600 mb-3">Target: 120M Tons (75% achieved)</p>
+                        <div class="bg-gray-200 rounded-full h-2">
+                            <div class="bg-soviet-red h-2 rounded-full" style="width: 75%"></div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white border-t-4 border-soviet-red p-6 shadow-lg rounded">
+                        <h4 class="text-soviet-red text-xl font-bold mb-2 font-display">MACHINERY</h4>
+                        <p class="text-5xl font-bold text-soviet-black mb-2">480K Units</p>
+                        <p class="text-gray-600 mb-3">Target: 500K Units (96% achieved)</p>
+                        <div class="bg-gray-200 rounded-full h-2">
+                            <div class="bg-soviet-red h-2 rounded-full" style="width: 96%"></div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white border-t-4 border-green-600 p-6 shadow-lg rounded">
+                        <h4 class="text-green-600 text-xl font-bold mb-2 font-display">ARMAMENTS</h4>
+                        <p class="text-5xl font-bold text-soviet-black mb-2">11K Tanks</p>
+                        <p class="text-green-600 mb-3">Target: 10K Tanks (110% achieved)</p>
+                        <div class="bg-gray-200 rounded-full h-2">
+                            <div class="bg-green-600 h-2 rounded-full" style="width: 100%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Regional Production Table -->
+                <div class="bg-white rounded-lg shadow-lg p-6 mb-12">
+                    <h3 class="text-3xl font-bold font-display text-soviet-red mb-6">Regional Steel Production Data</h3>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left">
+                            <thead>
+                                <tr class="border-b-2 border-soviet-red">
+                                    <th class="p-4 font-display text-soviet-red font-bold">REGION</th>
+                                    <th class="p-4 font-display text-soviet-red font-bold">TARGET (M TONS)</th>
+                                    <th class="p-4 font-display text-soviet-red font-bold">ACTUAL (M TONS)</th>
+                                    <th class="p-4 font-display text-soviet-red font-bold">COMPLETION</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="border-b border-gray-300">
+                                    <td class="p-4 font-medium">Urals Industrial Region</td>
+                                    <td class="p-4">50</td>
+                                    <td class="p-4">42</td>
+                                    <td class="p-4 font-bold text-soviet-red">84%</td>
+                                </tr>
+                                <tr class="bg-gray-50 border-b border-gray-300">
+                                    <td class="p-4 font-medium">Ukrainian SSR</td>
+                                    <td class="p-4">40</td>
+                                    <td class="p-4">28</td>
+                                    <td class="p-4 font-bold text-soviet-red">70%</td>
+                                </tr>
+                                <tr class="border-b border-gray-300">
+                                    <td class="p-4 font-medium">Siberian Federal District</td>
+                                    <td class="p-4">20</td>
+                                    <td class="p-4">15</td>
+                                    <td class="p-4 font-bold text-soviet-red">75%</td>
+                                </tr>
+                                <tr class="bg-gray-50">
+                                    <td class="p-4 font-medium">Kazakh SSR</td>
+                                    <td class="p-4">10</td>
+                                    <td class="p-4">5</td>
+                                    <td class="p-4 font-bold text-orange-600">50%</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Production Timeline Chart -->
+                <div class="bg-white rounded-lg shadow-lg p-6 mb-12">
+                    <h3 class="text-3xl font-bold font-display text-soviet-red mb-6">5-Year Production Timeline</h3>
+                    <div class="relative h-80 flex items-end justify-around px-8 border-l-2 border-b-2 border-gray-400">
+                        <!-- Year 1 -->
+                        <div class="flex flex-col items-center group flex-1">
+                            <div class="relative flex items-end h-64 gap-1 mb-2">
+                                <div class="w-12 bg-gray-400 rounded-t" style="height: 60%"></div>
+                                <div class="w-12 bg-soviet-red rounded-t" style="height: 55%"></div>
+                            </div>
+                            <span class="text-sm font-bold text-soviet-black">1986</span>
+                        </div>
+                        <!-- Year 2 -->
+                        <div class="flex flex-col items-center group flex-1">
+                            <div class="relative flex items-end h-64 gap-1 mb-2">
+                                <div class="w-12 bg-gray-400 rounded-t" style="height: 70%"></div>
+                                <div class="w-12 bg-soviet-red rounded-t" style="height: 68%"></div>
+                            </div>
+                            <span class="text-sm font-bold text-soviet-black">1987</span>
+                        </div>
+                        <!-- Year 3 -->
+                        <div class="flex flex-col items-center group flex-1">
+                            <div class="relative flex items-end h-64 gap-1 mb-2">
+                                <div class="w-12 bg-gray-400 rounded-t" style="height: 80%"></div>
+                                <div class="w-12 bg-soviet-red rounded-t" style="height: 82%"></div>
+                            </div>
+                            <span class="text-sm font-bold text-soviet-black">1988</span>
+                        </div>
+                        <!-- Year 4 -->
+                        <div class="flex flex-col items-center group flex-1">
+                            <div class="relative flex items-end h-64 gap-1 mb-2">
+                                <div class="w-12 bg-gray-400 rounded-t" style="height: 90%"></div>
+                                <div class="w-12 bg-soviet-red rounded-t" style="height: 95%"></div>
+                            </div>
+                            <span class="text-sm font-bold text-soviet-black">1989</span>
+                        </div>
+                        <!-- Year 5 -->
+                        <div class="flex flex-col items-center group flex-1">
+                            <div class="relative flex items-end h-64 gap-1 mb-2">
+                                <div class="w-12 bg-gray-400 rounded-t" style="height: 100%"></div>
+                                <div class="w-12 bg-green-600 rounded-t" style="height: 110%"></div>
+                            </div>
+                            <span class="text-sm font-bold text-soviet-black">1990</span>
+                        </div>
+                    </div>
+                    <div class="flex justify-center gap-6 mt-6 text-sm">
+                        <div class="flex items-center gap-2">
+                            <div class="w-4 h-4 bg-gray-400 rounded"></div>
+                            <span>Planned</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <div class="w-4 h-4 bg-soviet-red rounded"></div>
+                            <span>Actual</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <div class="w-4 h-4 bg-green-600 rounded"></div>
+                            <span>Exceeded</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="bg-soviet-black text-white py-6 mt-12">
+            <div class="container mx-auto px-4 text-center">
+                <p class="font-display">"План - это закон" ("The plan is law")</p>
+                <p class="text-sm text-gray-400 mt-2">Gosplan Data Mesh Implementation © 2025</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

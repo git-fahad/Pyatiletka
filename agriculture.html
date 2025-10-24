@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Pyatiletka - Agriculture Sector</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700;900&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet"/>
+    <style>
+        :root {
+            --soviet-red: #C41E3A;
+            --soviet-beige: #F5F5DC;
+            --soviet-black: #000000;
+        }
+        body {
+            background-color: var(--soviet-beige);
+            color: var(--soviet-black);
+            font-family: 'Roboto', sans-serif;
+        }
+        .font-display {
+            font-family: 'Roboto Slab', serif;
+        }
+        .text-soviet-red { color: var(--soviet-red); }
+        .bg-soviet-red { background-color: var(--soviet-red); }
+        .border-soviet-red { border-color: var(--soviet-red); }
+        .hover\:text-soviet-red:hover { color: var(--soviet-red); }
+    </style>
+</head>
+<body>
+    <div class="min-h-screen flex flex-col">
+        <!-- Header with Navigation -->
+        <header class="bg-soviet-beige border-b-2 border-soviet-red sticky top-0 z-50">
+            <div class="container mx-auto px-4 md:px-10 py-4">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-4">
+                        <svg class="w-12 h-12 text-soviet-red" fill="currentColor" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M24.7,35.75,17.2,28.25,15.75,29.7l5.1,5.1q-2.2,2.8-5.3,4.225T8.7,40.45q-3.35,0-5.7-2.35T.65,32.4q0-3.3,2.325-5.65T8.5,24.4l-2.4-2.4q-.55-.55-.55-1.325,0-.775.55-1.325l2.8-2.8q.55-.55,1.325-.55t1.325.55L13.5,18.8,11.2,16.5q-1.25-1.25-.35-2.825t2.7-.925l2.25,2.25,4.3-4.3-2.25-2.25q.65-1.8,2.225-2.7t2.825.35l2.3,2.3,2.25-2.25L32.3,8.7l-2.25,2.25,2.3,2.3q1.25,1.25.35,2.825t-2.7.925L28,14.8l-4.3,4.3,2.25,2.25q-.65,1.8-2.225,2.7T21.2,23.7l-2.3-2.3-2.25,2.25L14.4,25.9l2.25,2.25,1.45-1.45,7.5,7.5Z"/>
+                        </svg>
+                        <h1 class="text-2xl md:text-3xl font-bold font-display text-soviet-red">GOSPLAN</h1>
+                    </div>
+                    <nav class="hidden md:flex items-center gap-8">
+                        <a href="index.html" class="text-lg font-medium font-display text-soviet-black hover:text-soviet-red transition-colors">Home</a>
+                        <a href="heavy-industry.html" class="text-lg font-medium font-display text-soviet-black hover:text-soviet-red transition-colors">Heavy Industry</a>
+                        <a href="agriculture.html" class="text-lg font-bold font-display text-soviet-red">Agriculture</a>
+                        <a href="consumer-goods.html" class="text-lg font-medium font-display text-soviet-black hover:text-soviet-red transition-colors">Consumer Goods</a>
+                    </nav>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="flex-1">
+            <!-- Hero Section -->
+            <div class="relative bg-cover bg-center min-h-[400px] flex items-center justify-center" style='background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6)), url("https://lh3.googleusercontent.com/aida-public/AB6AXuAUOf9RXsZvZzOVWy6YeZFUj3tAEJ1NNjhuTdlj9HjV57_KurZu4Pdvdix8Yhxo-A_c2QxRY6RQBXtWZkSfw4xNpu49QRDiFdTD2s-98_sTkurRRZLogg1SeN2WCRyzH-RVC9LUE3kNkHzfhbgQHa0_wJ4CA4hjnX2NiBSTP2CGcWEQMBlsSEc5LIbwijfbf6uY4gLFUgQ-VWxbDRE2jn_K9mNlp8GE6SRpr3jISaGPUasoWxIQPsGC7NIe5Ad6QzqB8906TvdG6Cc");'>
+                <div class="text-center px-4">
+                    <h2 class="text-5xl md:text-6xl font-black font-display text-soviet-red mb-4 uppercase">Agriculture</h2>
+                    <p class="text-xl md:text-2xl text-white font-display">Fueling the Soviet Future</p>
+                </div>
+            </div>
+
+            <div class="container mx-auto px-4 md:px-10 py-12">
+                <!-- Overall Progress -->
+                <div class="mb-12">
+                    <h3 class="text-3xl font-bold font-display text-soviet-red mb-6 text-center">Five-Year Plan Progress</h3>
+                </div>
+
+                <!-- Key Metrics Cards -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+                    <div class="bg-white border-2 border-soviet-red p-6 shadow-lg rounded">
+                        <h4 class="text-soviet-red text-lg font-bold mb-2 font-display">TOTAL GRAIN PRODUCTION</h4>
+                        <p class="text-4xl font-bold text-soviet-black mb-2">123.5M Tons</p>
+                        <p class="text-gray-600">Annual grain harvest</p>
+                    </div>
+
+                    <div class="bg-white border-2 border-soviet-red p-6 shadow-lg rounded">
+                        <h4 class="text-soviet-red text-lg font-bold mb-2 font-display">COLLECTIVE FARM OUTPUT</h4>
+                        <p class="text-4xl font-bold text-soviet-black mb-2">98%</p>
+                        <p class="text-gray-600">Of production target</p>
+                    </div>
+
+                    <div class="bg-white border-2 border-soviet-red p-6 shadow-lg rounded">
+                        <h4 class="text-soviet-red text-lg font-bold mb-2 font-display">LIVESTOCK GROWTH</h4>
+                        <p class="text-4xl font-bold text-soviet-black mb-2">5.4M Head</p>
+                        <p class="text-gray-600">Total livestock count</p>
+                    </div>
+                </div>
+
+                <!-- Progress Bars -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+                    <div class="bg-white border-2 border-soviet-red p-6 shadow-lg rounded">
+                        <div class="flex justify-between mb-2">
+                            <h4 class="font-bold font-display text-soviet-black">Total Grain Production</h4>
+                            <span class="font-bold text-soviet-red">85%</span>
+                        </div>
+                        <div class="bg-gray-300 rounded-full h-3">
+                            <div class="bg-soviet-red h-3 rounded-full" style="width: 85%"></div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white border-2 border-soviet-red p-6 shadow-lg rounded">
+                        <div class="flex justify-between mb-2">
+                            <h4 class="font-bold font-display text-soviet-black">Collective Farm Output</h4>
+                            <span class="font-bold text-soviet-red">98%</span>
+                        </div>
+                        <div class="bg-gray-300 rounded-full h-3">
+                            <div class="bg-soviet-red h-3 rounded-full" style="width: 98%"></div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white border-2 border-soviet-red p-6 shadow-lg rounded">
+                        <div class="flex justify-between mb-2">
+                            <h4 class="font-bold font-display text-soviet-black">Livestock Growth</h4>
+                            <span class="font-bold text-orange-600">78%</span>
+                        </div>
+                        <div class="bg-gray-300 rounded-full h-3">
+                            <div class="bg-orange-600 h-3 rounded-full" style="width: 78%"></div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white border-2 border-soviet-red p-6 shadow-lg rounded">
+                        <div class="flex justify-between mb-2">
+                            <h4 class="font-bold font-display text-soviet-black">Mechanization</h4>
+                            <span class="font-bold text-soviet-red">92%</span>
+                        </div>
+                        <div class="bg-gray-300 rounded-full h-3">
+                            <div class="bg-soviet-red h-3 rounded-full" style="width: 92%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Informational Sections -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+                    <div class="bg-white border-2 border-soviet-red p-6 shadow-lg rounded">
+                        <h3 class="text-2xl font-bold font-display text-soviet-red mb-4">The Vision for a Bountiful Harvest</h3>
+                        <p class="text-gray-700 leading-relaxed">
+                            Our five-year plan for agriculture is founded on the principles of collectivization and mechanization,
+                            aiming to create an abundance of food for the Soviet people and a surplus for the state. We envision
+                            a future where our fields are the most productive in the world.
+                        </p>
+                    </div>
+
+                    <div class="bg-white border-2 border-soviet-red p-6 shadow-lg rounded">
+                        <h3 class="text-2xl font-bold font-display text-soviet-red mb-4">The Role of the Kolkhoz</h3>
+                        <p class="text-gray-700 leading-relaxed">
+                            The collective farm, or Kolkhoz, is the cornerstone of our agricultural success. By pooling resources,
+                            labor, and land, our farmers work together for the common good, driving efficiency and ensuring that
+                            the fruits of their labor benefit the entire nation.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Regional Performance -->
+                <div class="bg-white border-2 border-soviet-red p-6 shadow-lg rounded mb-12">
+                    <h3 class="text-3xl font-bold font-display text-soviet-red mb-6">Top Performing Agricultural Oblasts</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                        <div class="p-4 bg-gray-50 rounded">
+                            <h4 class="font-bold text-lg mb-2">Krasnodar Krai</h4>
+                            <div class="flex justify-between text-sm mb-1">
+                                <span>Grain Output</span>
+                                <span class="font-bold">105%</span>
+                            </div>
+                            <div class="bg-gray-200 rounded-full h-2">
+                                <div class="bg-green-600 h-2 rounded-full" style="width: 100%"></div>
+                            </div>
+                        </div>
+
+                        <div class="p-4 bg-gray-50 rounded">
+                            <h4 class="font-bold text-lg mb-2">Stavropol Krai</h4>
+                            <div class="flex justify-between text-sm mb-1">
+                                <span>Grain Output</span>
+                                <span class="font-bold">102%</span>
+                            </div>
+                            <div class="bg-gray-200 rounded-full h-2">
+                                <div class="bg-green-600 h-2 rounded-full" style="width: 100%"></div>
+                            </div>
+                        </div>
+
+                        <div class="p-4 bg-gray-50 rounded">
+                            <h4 class="font-bold text-lg mb-2">Ukrainian SSR</h4>
+                            <div class="flex justify-between text-sm mb-1">
+                                <span>Grain Output</span>
+                                <span class="font-bold">98%</span>
+                            </div>
+                            <div class="bg-gray-200 rounded-full h-2">
+                                <div class="bg-soviet-red h-2 rounded-full" style="width: 98%"></div>
+                            </div>
+                        </div>
+
+                        <div class="p-4 bg-gray-50 rounded">
+                            <h4 class="font-bold text-lg mb-2">Rostov Oblast</h4>
+                            <div class="flex justify-between text-sm mb-1">
+                                <span>Grain Output</span>
+                                <span class="font-bold">96%</span>
+                            </div>
+                            <div class="bg-gray-200 rounded-full h-2">
+                                <div class="bg-soviet-red h-2 rounded-full" style="width: 96%"></div>
+                            </div>
+                        </div>
+
+                        <div class="p-4 bg-gray-50 rounded">
+                            <h4 class="font-bold text-lg mb-2">Volgograd Oblast</h4>
+                            <div class="flex justify-between text-sm mb-1">
+                                <span>Grain Output</span>
+                                <span class="font-bold">94%</span>
+                            </div>
+                            <div class="bg-gray-200 rounded-full h-2">
+                                <div class="bg-soviet-red h-2 rounded-full" style="width: 94%"></div>
+                            </div>
+                        </div>
+
+                        <div class="p-4 bg-gray-50 rounded">
+                            <h4 class="font-bold text-lg mb-2">Altai Krai</h4>
+                            <div class="flex justify-between text-sm mb-1">
+                                <span>Grain Output</span>
+                                <span class="font-bold">91%</span>
+                            </div>
+                            <div class="bg-gray-200 rounded-full h-2">
+                                <div class="bg-soviet-red h-2 rounded-full" style="width: 91%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="bg-soviet-black text-white py-6 mt-12">
+            <div class="container mx-auto px-4 text-center">
+                <p class="font-display">"План - это закон" ("The plan is law")</p>
+                <p class="text-sm text-gray-400 mt-2">Gosplan Data Mesh Implementation © 2025</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
