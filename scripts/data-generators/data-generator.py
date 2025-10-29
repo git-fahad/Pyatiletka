@@ -10,7 +10,7 @@ from psycopg2.extras import execute_batch
 # Database connection parameters
 DB_CONFIG = {
     'host': 'localhost',
-    'port': 5432,
+    'port': 5433,
     'database': 'heavy_industry',
     'user': 'heavy_industry_user',
     'password': 'heavy_industry_pass'
@@ -159,7 +159,7 @@ class ProductionDataGenerator:
 
         facility_id = facility_product['facility_id']
         product_id = facility_product['product_id']
-        base_capacity = facility_product['capacity_per_day']
+        base_capacity = float(facility_product['capacity_per_day'])
         workforce = facility_product['workforce_size']
 
         # Adjust base capacity based on product type
@@ -218,10 +218,11 @@ class ProductionDataGenerator:
         targets = []
         facility_id = facility_product['facility_id']
         product_id = facility_product['product_id']
-        base_capacity = facility_product['capacity_per_day']
+        base_capacity = float(facility_product['capacity_per_day'])  # ADD float() here
 
         # Adjust for product type
         if facility_product['product_category'] == 'STEEL':
+            # Steel mills produce multiple products, divide capacity
             base_capacity = base_capacity * 0.3
 
         # Annual target is base_capacity * 365 * target_multiplier
