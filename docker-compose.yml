@@ -1,0 +1,57 @@
+version: '3.8'
+
+# Network for services to communicate
+networks:
+  pyatiletka-network:
+    driver: bridge
+
+# Persistent storage for database
+volumes:
+  postgres-heavy-industry-data:
+
+# Setting up only Postgres SQL for HI, for now
+
+services:
+
+  heavy-industry-db:
+    image: postgres:15-alpine
+    container_name: pyatiletka-heavy-industry-db
+    environment:
+      POSTGRES_USER: heavy_industry_user
+      POSTGRES_PASSWORD: heavy_industry_pass
+      POSTGRES_DB: heavy_industry
+    volumes:
+      # Persistent data storage
+      - postgres-heavy-industry-data:/var/lib/postgresql/data
+      # Initialization scripts (schema and seed data)
+      - ./infrastructure/init-scripts/heavy-industry:/docker-entrypoint-initdb.d
+    ports:
+      - "5433:5433"
+    networks:
+      - pyatiletka-network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U heavy_industry_user -d heavy_industry"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+
+  #############################################################################
+  # PGADMIN (Optional - Database Management UI)
+  #############################################################################
+
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    container_name: pyatiletka-pgadmin
+    environment:
+      PGADMIN_DEFAULT_EMAIL: tomail.fahad@gmail.com
+      PGADMIN_DEFAULT_PASSWORD: admin
+      PGADMIN_CONFIG_SERVER_MODE: 'False'
+      PGADMIN_CONFIG_MASTER_PASSWORD_REQUIRED: 'False'
+    ports:
+      - "5050:80"
+    networks:
+      - pyatiletka-network
+    restart: unless-stopped
+    depends_on:
+      - heavy-industry-db
