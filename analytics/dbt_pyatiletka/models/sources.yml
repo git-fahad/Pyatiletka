@@ -1,0 +1,38 @@
+version: 2
+
+sources:
+  - name: bronze
+    description: "Raw data layer in MinIO - extracted directly from source systems"
+    meta:
+      owner: "data-engineering-team"
+
+    tables:
+      - name: facilities
+        description: "Raw facilities data from Heavy Industry API"
+        meta:
+          layer: "bronze"
+          source_system: "heavy_industry_api"
+        loaded_at_field: dbt_loaded_at
+        freshness:
+          warn_after: {count: 2, period: day}
+          error_after: {count: 3, period: day}
+
+      - name: products
+        description: "Raw products data from Heavy Industry API"
+        meta:
+          layer: "bronze"
+          source_system: "heavy_industry_api"
+        loaded_at_field: dbt_loaded_at
+        freshness:
+          warn_after: {count: 2, period: day}
+          error_after: {count: 3, period: day}
+
+      - name: regions
+        description: "Raw regions data from Heavy Industry API"
+        meta:
+          layer: "bronze"
+          source_system: "heavy_industry_api"
+        loaded_at_field: dbt_loaded_at
+        freshness:
+          warn_after: {count: 2, period: day}
+          error_after: {count: 3, period: day}

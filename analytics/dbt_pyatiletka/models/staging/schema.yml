@@ -1,0 +1,96 @@
+version: 2
+
+models:
+  # STAGING MODELS
+  - name: stg_facilities
+    description: "Staging table for facilities from Heavy Industry domain"
+    columns:
+      - name: facility_id
+        description: "Unique facility identifier"
+        tests:
+          - unique
+          - not_null
+
+      - name: facility_code
+        description: "Facility code (e.g., MILL-001)"
+        tests:
+          - not_null
+
+      - name: facility_name
+        description: "Full name of the facility"
+
+      - name: facility_type
+        description: "Type of facility"
+        tests:
+          - accepted_values:
+              values: ['STEEL_MILL', 'MACHINERY_FACTORY', 'TANK_PLANT']
+
+      - name: status
+        description: "Current operational status"
+        tests:
+          - accepted_values:
+              values: ['ACTIVE', 'MAINTENANCE', 'INACTIVE']
+
+  - name: stg_products
+    description: "Staging table for products"
+    columns:
+      - name: product_id
+        description: "Unique product identifier"
+        tests:
+          - unique
+          - not_null
+
+      - name: product_category
+        description: "Product category"
+        tests:
+          - accepted_values:
+              values: ['STEEL', 'MACHINERY', 'ARMAMENTS']
+
+  - name: stg_regions
+    description: "Staging table for regions"
+    columns:
+      - name: region_id
+        description: "Unique region identifier"
+        tests:
+          - unique
+          - not_null
+
+      - name: region_type
+        description: "Type of region"
+        tests:
+          - accepted_values:
+              values: ['USSR', 'REPUBLIC', 'OBLAST']
+
+  # MART MODELS
+  - name: mart_facilities
+    description: "Analytics-ready facilities dimension with enriched attributes"
+    columns:
+      - name: facility_id
+        description: "Unique facility identifier"
+        tests:
+          - unique
+          - not_null
+
+      - name: is_active
+        description: "Boolean flag indicating if facility is currently active"
+        tests:
+          - not_null
+
+      - name: years_operational
+        description: "Number of years facility has been operational"
+        tests:
+          - not_null
+
+  - name: mart_products
+    description: "Analytics-ready products dimension with classifications"
+    columns:
+      - name: product_id
+        description: "Unique product identifier"
+        tests:
+          - unique
+          - not_null
+
+      - name: product_group
+        description: "High-level product grouping"
+        tests:
+          - not_null

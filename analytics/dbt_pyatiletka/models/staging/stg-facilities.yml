@@ -1,0 +1,35 @@
+{{
+    config(
+        materialized='view',
+        tags=['staging', 'heavy_industry']
+    )
+}}
+
+-- Read directly from MinIO bronze layer Parquet files
+-- DuckDB can query Parquet files on S3/MinIO directly
+
+WITH source AS (
+    SELECT *
+    FROM read_parquet('s3://bronze/heavy_industry/facilities/*/facilities.parquet')
+),
+
+renamed AS (
+    SELECT
+        facility_id,
+        facility_code,
+        facility_name,
+        facility_type,
+        capacity_per_day,
+        workforce_size,
+        commissioned_date,
+        status,
+        region_name,
+        
+        -- Add metadata
+        CURRENT_TIMESTAMP AS dbt_loaded_at,
+        'bronze' AS source_layer
+        
+    FROM source
+)
+
+SELECT * FROM renamed

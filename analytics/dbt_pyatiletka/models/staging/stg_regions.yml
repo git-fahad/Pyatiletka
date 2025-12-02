@@ -1,0 +1,27 @@
+{{
+    config(
+        materialized='view',
+        tags=['staging', 'heavy_industry']
+    )
+}}
+
+WITH source AS (
+    SELECT *
+    FROM read_parquet('s3://bronze/heavy_industry/regions/*/regions.parquet')
+),
+
+renamed AS (
+    SELECT
+        region_id,
+        region_code,
+        region_name,
+        region_type,
+        
+        -- Metadata
+        CURRENT_TIMESTAMP AS dbt_loaded_at,
+        'bronze' AS source_layer
+        
+    FROM source
+)
+
+SELECT * FROM renamed

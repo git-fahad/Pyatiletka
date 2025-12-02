@@ -1,0 +1,36 @@
+pyatiletka:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: '/tmp/pyatiletka_warehouse.duckdb'
+      schema: main
+      threads: 4
+
+      # DuckDB extensions for reading from S3/MinIO
+      extensions:
+        - httpfs
+        - parquet
+
+      # MinIO/S3 configuration
+      settings:
+        s3_endpoint: 'minio:9000'
+        s3_access_key_id: 'minio_admin'
+        s3_secret_access_key: 'minio_password'
+        s3_use_ssl: false
+        s3_url_style: 'path'
+
+    prod:
+      type: duckdb
+      path: '/data/warehouse/pyatiletka_warehouse.duckdb'
+      schema: main
+      threads: 8
+      extensions:
+        - httpfs
+        - parquet
+      settings:
+        s3_endpoint: 'minio:9000'
+        s3_access_key_id: 'minio_admin'
+        s3_secret_access_key: 'minio_password'
+        s3_use_ssl: false
+        s3_url_style: 'path'

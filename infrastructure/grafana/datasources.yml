@@ -1,0 +1,16 @@
+apiVersion: 1
+
+datasources:
+  - name: Heavy Industry PostgreSQL
+    type: postgres
+    access: proxy
+    url: heavy-industry-db:5432
+    database: heavy_industry
+    user: heavy_industry_user
+    secureJsonData:
+      password: heavy_industry_pass
+    jsonData:
+      sslmode: 'disable'
+      postgresVersion: 1500
+    isDefault: true
+    editable: true
