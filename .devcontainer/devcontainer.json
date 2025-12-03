@@ -1,0 +1,66 @@
+{
+  "name": "Pyatiletka Data Platform",
+  "image": "mcr.microsoft.com/devcontainers/python:3.11",
+
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {
+      "version": "latest",
+      "moby": true
+    },
+    "ghcr.io/devcontainers/features/git:1": {}
+  },
+
+  "forwardPorts": [
+    3000,  // Grafana
+    5000,  // Flask (if added later)
+    5050,  // PgAdmin
+    5432,  // PostgreSQL
+    8000,  // FastAPI
+    8080,  // Airflow
+    9000,  // MinIO API
+    9001   // MinIO Console
+  ],
+
+  "portsAttributes": {
+    "3000": {
+      "label": "Grafana",
+      "onAutoForward": "notify"
+    },
+    "5050": {
+      "label": "PgAdmin",
+      "onAutoForward": "notify"
+    },
+    "8000": {
+      "label": "FastAPI",
+      "onAutoForward": "notify"
+    },
+    "8080": {
+      "label": "Airflow",
+      "onAutoForward": "notify"
+    },
+    "9001": {
+      "label": "MinIO Console",
+      "onAutoForward": "notify"
+    }
+  },
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "ms-azuretools.vscode-docker",
+        "redhat.vscode-yaml",
+        "ms-python.vscode-pylance"
+      ],
+      "settings": {
+        "python.defaultInterpreterPath": "/usr/local/bin/python",
+        "python.linting.enabled": true,
+        "python.formatting.provider": "black"
+      }
+    }
+  },
+
+  "postCreateCommand": "pip install --user -r requirements.txt || true",
+
+  "remoteUser": "vscode"
+}

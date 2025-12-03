@@ -273,7 +273,7 @@ services:
     image: dpage/pgadmin4:latest
     container_name: pyatiletka-pgadmin
     environment:
-      PGADMIN_DEFAULT_EMAIL: admin@pyatiletka.local
+      PGADMIN_DEFAULT_EMAIL: tomail.fahad@gmail.com
       PGADMIN_DEFAULT_PASSWORD: admin
       PGADMIN_CONFIG_SERVER_MODE: 'False'
       PGADMIN_CONFIG_MASTER_PASSWORD_REQUIRED: 'False'
