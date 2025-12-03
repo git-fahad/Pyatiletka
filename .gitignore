@@ -3,3 +3,38 @@ __pycache__/
 .env
 *.log
 backups/
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+.venv/
+env/
+
+# IDEs
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Data
+*.duckdb
+*.duckdb.wal
+
+# Logs
+*.log
+platform/airflow/logs/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Docker
+.docker/
+
+# Secrets
+.env
+*.pem
+*.key
